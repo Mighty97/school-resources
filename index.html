@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Portal - Resources</title>
+    <style>
+        /* --- ENHANCED STYLES --- */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Login Screen Background */
+        .login-screen {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e8ba3 100%);
+        }
+
+        /* Mobile background with logo pattern */
+        @media (max-width: 768px) {
+            .login-screen::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><text x="50%" y="50%" font-size="60" text-anchor="middle" dominant-baseline="middle" fill="rgba(255,215,0,0.1)" font-family="Arial, sans-serif" font-weight="bold">SGIC</text></svg>');
+                background-repeat: repeat;
+                background-size: 150px 150px;
+                opacity: 0.3;
+                z-index: 0;
+            }
+        }
+
+        .login-container {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+            z-index: 1;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-title {
+            text-align: center;
+            font-size: 32px;
+            color: #1e3c72;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .login-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 35px;
+            font-size: 14px;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 15px 18px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #1e3c72;
+            box-shadow: 0 0 0 3px rgba(30, 60, 114, 0.1);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(30, 60, 114, 0.3);
+        }
+
+        .login-btn:active {
+            transform: translateY(0);
+        }
+
+        .error-message {
+            background: #fee;
+            color: #c33;
+            padding: 14px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #c33;
+            font-size: 14px;
+            display: none;
+            animation: shake 0.5s;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-8px); }
+            20%, 40%, 60%, 80% { transform: translateX(8px); }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Main App Background */
+        .main-app {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 25%, #FFD700 100%);
+            padding: 30px 20px;
+            position: relative;
+        }
+
+        /* Mobile background pattern for main app */
+        @media (max-width: 768px) {
+            .main-app::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect x="60" y="40" width="80" height="100" fill="none" stroke="rgba(255,215,0,0.08)" stroke-width="4"/><line x1="70" y1="60" x2="130" y2="60" stroke="rgba(255,215,0,0.08)" stroke-width="3"/><line x1="70" y1="80" x2="130" y2="80" stroke="rgba(255,215,0,0.08)" stroke-width="3"/><line x1="70" y1="100" x2="130" y2="100" stroke="rgba(255,215,0,0.08)" stroke-width="3"/></svg>');
+                background-repeat: repeat;
+                background-size: 150px 150px;
+                opacity: 0.5;
+                z-index: 0;
+                pointer-events: none;
+            }
+        }
+
+        .app-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .app-header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .app-title {
+            font-size: 36px;
+            color: white;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .logout-btn {
+            padding: 10px 25px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .logout-btn:hover {
+            background: white;
+            color: #1e3c72;
+        }
+
+        /* Tabs Section */
+        .tabs-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .tabs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .tab {
+            padding: 18px;
+            background: #f5f5f5;
+            border: 3px solid transparent;
+            border-radius: 12px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: #666;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tab:hover {
+            background: #ececec;
+        }
+
+        .tab.active {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            border-color: #1e3c72;
+            transform: scale(1.02);
+        }
+
+        /* Content Section */
+        .content-section {
+            transition: all 0.4s ease;
+        }
+
+        .class-list,
+        .term-list,
+        .subject-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .class-btn,
+        .term-btn,
+        .subject-btn {
+            padding: 20px 25px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .class-btn:hover,
+        .term-btn:hover,
+        .subject-btn:hover {
+            border-color: #1e3c72;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            transform: translateX(8px);
+            box-shadow: 0 5px 20px rgba(30, 60, 114, 0.3);
+        }
+
+        .arrow {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFD700;
+        }
+
+        .class-btn:hover .arrow,
+        .term-btn:hover .arrow,
+        .subject-btn:hover .arrow {
+            color: white;
+        }
+
+        .back-btn {
+            padding: 12px 25px;
+            background: #f5f5f5;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .back-btn:hover {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .section-title {
+            font-size: 24px;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* File type badge */
+        .file-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #FFD700;
+            color: #1e3c72;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-left: 10px;
+            text-transform: uppercase;
+        }
+
+        .subject-btn:hover .file-badge {
+            background: white;
+            color: #1e3c72;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .login-container {
+                padding: 40px 25px;
+            }
+
+            .app-title {
+                font-size: 28px;
+            }
+
+            .tabs-section {
+                padding: 20px;
+            }
+
+            .tab {
+                font-size: 16px;
+                padding: 15px;
+            }
+
+            .class-btn,
+            .term-btn,
+            .subject-btn {
+                font-size: 16px;
+                padding: 16px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login-title {
+                font-size: 26px;
+            }
+
+            .app-title {
+                font-size: 24px;
+            }
+
+            .tabs {
+                gap: 10px;
+            }
+
+            .tab {
+                font-size: 14px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Screen -->
+    <div class="login-screen" id="loginScreen">
+        <div class="login-container">
+            <h1 class="login-title">📚 Teacher's Resources Centre</h1>
+            <p class="login-subtitle">Enter resources password to continue</p>
+            
+            <div class="error-message" id="errorMessage">
+                Incorrect password. Please try again.
+            </div>
+
+            <div class="input-group">
+                <label for="passwordInput">Password</label>
+                <input type="password" id="passwordInput" placeholder="Enter password">
+            </div>
+
+            <button class="login-btn" id="loginBtn">Login</button>
+        </div>
+    </div>
+
+    <!-- Main Application -->
+    <div class="main-app hidden" id="mainApp">
+        <div class="app-container">
+            <div class="app-header">
+                <h1 class="app-title">📖 Resources Portal</h1>
+                <button class="logout-btn" id="logoutBtn">Logout</button>
+            </div>
+
+            <div class="tabs-section">
+                <!-- Tabs -->
+                <div class="tabs">
+                    <div class="tab active" id="juniorTab">Junior</div>
+                    <div class="tab" id="seniorTab">Senior</div>
+                </div>
+
+                <!-- Content Area -->
+                <div class="content-section" id="contentSection">
+                    <!-- Class List (Junior) -->
+                    <div class="class-list" id="juniorClasses">
+                        <button class="class-btn" data-class="JSS 1" data-level="junior">
+                            <span>JSS 1</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <button class="class-btn" data-class="JSS 2" data-level="junior">
+                            <span>JSS 2</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <button class="class-btn" data-class="JSS 3" data-level="junior">
+                            <span>JSS 3</span>
+                            <span class="arrow">›</span>
+                        </button>
+                    </div>
+
+                    <!-- Class List (Senior) -->
+                    <div class="class-list hidden" id="seniorClasses">
+                        <button class="class-btn" data-class="SS 1" data-level="senior">
+                            <span>SS 1</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <button class="class-btn" data-class="SS 2" data-level="senior">
+                            <span>SS 2</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <button class="class-btn" data-class="SS 3" data-level="senior">
+                            <span>SS 3</span>
+                            <span class="arrow">›</span>
+                        </button>
+                    </div>
+
+                    <!-- Term Selection -->
+                    <div class="term-list hidden" id="termList">
+                        <button class="back-btn" id="backToClasses">← Back to Classes</button>
+                        <h2 class="section-title" id="termTitle">Select Term</h2>
+                        <button class="term-btn" data-term="First Term">
+                            <span>First Term</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <button class="term-btn" data-term="Second Term">
+                            <span>Second Term</span>
+                            <span class="arrow">›</span>
+                        </button>
+                        <button class="term-btn" data-term="Third Term">
+                            <span>Third Term</span>
+                            <span class="arrow">›</span>
+                        </button>
+                    </div>
+
+                    <!-- Subject Selection -->
+                    <div class="subject-list hidden" id="subjectList">
+                        <button class="back-btn" id="backToTerms">← Back to Terms</button>
+                        <h2 class="section-title" id="subjectTitle">Select Subject</h2>
+                        <div id="subjectButtons"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ========================================================================
+        // CONFIGURATION
+        // ========================================================================
+        const CORRECT_PASSWORD = 'sgic2026';
+
+        // ========================================================================
+        // COMPLETE DATA STRUCTURE
+        // Organized as: Level → Class → Term → Subjects Array
+        // Each subject has a UNIQUE file path - NO FILES ARE SHARED
+        // ========================================================================
+        const resourcesDatabase = {
+            junior: {
+                'JSS 1': {
+                    'First Term': [
+                        { name: 'Mathematics', file: '/downloads/jss1/first-term/mathematics.pdf', type: 'pdf' },
+                        { name: 'English Language', file: '/downloads/jss1/first-term/english.pdf', type: 'pdf' },
+                        { name: 'Basic Science', file: '/downloads/jss1/first-term/basic-science.pdf', type: 'pdf' },
+                        { name: 'Civic Education', file: '/downloads/jss1/first-term/civic-education.pdf', type: 'pdf' },
+                        { name: 'Computer Studies', file: '/downloads/jss1/first-term/computer.docx', type: 'docx' },
+                        { name: 'Social Studies', file: '/downloads/jss1/first-term/social-studies.pdf', type: 'pdf' },
+                        { name: 'Home Economics', file: '/downloads/jss1/first-term/home-economics.pdf', type: 'pdf' },
+                        { name: 'Cultural & Creative Arts', file: '/downloads/jss1/first-term/cca.pdf', type: 'pdf' }
+                    ],
+                    'Second Term': [
+                        { name: 'Mathematics', file: '/downloads/jss1/second-term/mathematics.pdf', type: 'pdf' },
+                        { name: 'English Language', file: '/downloads/jss1/second-term/english.pdf', type: 'pdf' },
+                        { name: 'Basic Science', file: '/downloads/jss1/second-term/basic-science.pdf', type: 'pdf' },
+                        { name: 'Civic Education', file: '/downloads/jss1/second-term/civic-education.pdf', type: 'pdf' },
+                        { name: 'Computer Studies', file: '/downloads/jss1/second-term/computer.zip', type: 'zip' },
+                        { name: 'Social Studies', file: '/downloads/jss1/second-term/social-studies.pdf', type: 'pdf' },
+                        { name: 'Agricultural Science', file: '/downloads/jss1/second-term/agriculture.pdf', type: 'pdf' },
+                        { name: 'French Language', file: '/downloads/jss1/second-term/french.docx', type: 'docx' }
+                    ],
+                    'Third Term': [
+                        { name: 'Mathematics', file: '/downloads/jss1/third-term/mathematics.pdf', type: 'pdf' },
+                        { name: 'English Language', file: '/downloads/jss1/third-term/english.pdf', type: 'pdf' },
+                        { name: 'Basic Science', file: '/downloads/jss1/third-term/basic-science.pdf', type: 'pdf' },
+                        { name: 'Civic Education', file: '/downloads/jss1/third-term/civic-education.pdf', type: 'pdf' },
+                        { name: 'Computer Studies', file: '/downloads/jss1/third-term/computer.pdf', type: 'pdf' },
+                        { name: 'Business Studies', file: '/downloads/jss1/third-term/business-studies.pdf', type: 'pdf' },
+                        { name: 'Physical & Health Education', file: '/downloads/jss1/third-term/phe.pdf', type: 'pdf' },
+                        { name: 'Religious Studies', file: '/downloads/jss1/third-term/religion.pdf', type: 'pdf' }
+                    ]
+                },
+                'JSS 2': {
+                    'First Term': [
+                        { name: 'Mathematics', file: '/downloads/jss2/first-term/mathematics.pdf', type: 'pdf' },
+                        { name: 'English Language', file: '/downloads/jss2/first-term/english.pdf', type: 'pdf' },
+                        { name: 'Basic Science', file: '/downloads/jss2/first-term/basic-science.pdf', type: 'pdf' },
+                        { name: 'Civic Education', file: '/downloads/jss2/first-term/civic-education.pdf', type: 'pdf' },
+                        { name: 'Computer Studies', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Social Studies', file: '/downloads/jss2/first-term/social-studies.pdf', type: 'pdf' },
+                        { name: 'Home Economics', file: '/downloads/jss2/first-term/home-economics.pdf', type: 'pdf' },
+                        { name: 'Agricultural Science', file: '/downloads/jss2/first-term/agriculture.pdf', type: 'pdf' }
+                    ],
+                    'Second Term': [
+                        { name: 'Mathematics', file: '/downloads/jss2/second-term/mathematics.pdf', type: 'pdf' },
+                        { name: 'English Language', file: '/downloads/jss2/second-term/english.pdf', type: 'pdf' },
+                        { name: 'Basic Science', file: '/downloads/jss2/second-term/basic-science.pdf', type: 'pdf' },
+                        { name: 'Civic Education', file: '/downloads/jss2/second-term/civic-education.pdf', type: 'pdf' },
+                        { name: 'Computer Studies', file: '/downloads/jss2/second-term/computer.zip', type: 'zip' },
+                        { name: 'Social Studies', file: '/downloads/jss2/second-term/social-studies.pdf', type: 'pdf' },
+                        { name: 'French Language', file: '/downloads/jss2/second-term/french.docx', type: 'docx' },
+                        { name: 'Business Studies', file: '/downloads/jss2/second-term/business-studies.pdf', type: 'pdf' }
+                    ],
+                    'Third Term': [
+                        { name: 'Mathematics', file: '/downloads/jss2/third-term/mathematics.pdf', type: 'pdf' },
+                        { name: 'English Language', file: '/downloads/jss2/third-term/english.pdf', type: 'pdf' },
+                        { name: 'Basic Science', file: '/downloads/jss2/third-term/basic-science.pdf', type: 'pdf' },
+                        { name: 'Civic Education', file: '/downloads/jss2/third-term/civic-education.pdf', type: 'pdf' },
+                        { name: 'Computer Studies', file: '/downloads/jss2/third-term/computer.pdf', type: 'pdf' },
+                        { name: 'Cultural & Creative Arts', file: '/downloads/jss2/third-term/cca.pdf', type: 'pdf' },
+                        { name: 'Physical & Health Education', file: '/downloads/jss2/third-term/phe.pdf', type: 'pdf' },
+                        { name: 'Religious Studies', file: '/downloads/jss2/third-term/religion.pdf', type: 'pdf' }
+                    ]
+                },
+                'JSS 3': {
+                    'First Term': [
+                        { name: 'Mathematics', file: '/downloads/jss3/first-term/mathematics.pdf', type: 'pdf' },
+                        { name: 'English Language', file: '/downloads/jss3/first-term/english.pdf', type: 'pdf' },
+                        { name: 'Basic Science', file: '/downloads/jss3/first-term/basic-science.pdf', type: 'pdf' },
+                        { name: 'Civic Education', file: '/downloads/jss3/first-term/civic-education.pdf', type: 'pdf' },
+                        { name: 'Computer Studies', file: '/downloads/jss3/first-term/computer.docx', type: 'docx' },
+                        { name: 'Social Studies', file: '/downloads/jss3/first-term/social-studies.pdf', type: 'pdf' },
+                        { name: 'Business Studies', file: '/downloads/jss3/first-term/business-studies.pdf', type: 'pdf' },
+                        { name: 'Agricultural Science', file: '/downloads/jss3/first-term/agriculture.pdf', type: 'pdf' }
+                    ],
+                    'Second Term': [
+                        { name: 'Mathematics', file: '/downloads/jss3/second-term/mathematics.pdf', type: 'pdf' },
+                        { name: 'English Language', file: '/downloads/jss3/second-term/english.pdf', type: 'pdf' },
+                        { name: 'Basic Science', file: '/downloads/jss3/second-term/basic-science.pdf', type: 'pdf' },
+                        { name: 'Civic Education', file: '/downloads/jss3/second-term/civic-education.pdf', type: 'pdf' },
+                        { name: 'Computer Studies', file: '/downloads/jss3/second-term/computer.zip', type: 'zip' },
+                        { name: 'Social Studies', file: '/downloads/jss3/second-term/social-studies.pdf', type: 'pdf' },
+                        { name: 'French Language', file: '/downloads/jss3/second-term/french.docx', type: 'docx' },
+                        { name: 'Home Economics', file: '/downloads/jss3/second-term/home-economics.pdf', type: 'pdf' }
+                    ],
+                    'Third Term': [
+                        { name: 'Mathematics', file: '/downloads/jss3/third-term/mathematics.pdf', type: 'pdf' },
+                        { name: 'English Language', file: '/downloads/jss3/third-term/english.pdf', type: 'pdf' },
+                        { name: 'Basic Science', file: '/downloads/jss3/third-term/basic-science.pdf', type: 'pdf' },
+                        { name: 'Civic Education', file: '/downloads/jss3/third-term/civic-education.pdf', type: 'pdf' },
+                        { name: 'Computer Studies', file: '/downloads/jss3/third-term/computer.pdf', type: 'pdf' },
+                        { name: 'Business Studies', file: '/downloads/jss3/third-term/business-studies.pdf', type: 'pdf' },
+                        { name: 'Physical & Health Education', file: '/downloads/jss3/third-term/phe.pdf', type: 'pdf' },
+                        { name: 'Religious Studies', file: '/downloads/jss3/third-term/religion.pdf', type: 'pdf' }
+                    ]
+                }
+            },
+            senior: {
+                'SS 1': {
+                    'First Term': [
+                        { name: 'Mathematics', file: '/downloads/ss1/first-term/mathematics.pdf', type: 'pdf' },
+                        { name: 'English Language', file: '/downloads/ss1/first-term/english.pdf', type: 'pdf' },
+                        { name: 'Physics', file: '/downloads/ss1/first-term/physics.pdf', type: 'pdf' },
+                        { name: 'Chemistry', file: '/downloads/ss1/first-term/chemistry.pdf', type: 'pdf' },
+                        { name: 'Biology', file: '/downloads/ss1/first-term/biology.pdf', type: 'pdf' },
+                        { name: 'Economics', file: '/downloads/ss1/first-term/economics.pdf', type: 'pdf' },
+                        { name: 'Government', file: '/downloads/ss1/first-term/government.pdf', type: 'pdf' },
+                        { name: 'Literature in English', file: '/downloads/ss1/first-term/literature.docx', type: 'docx' }
+                    ],
+                    'Second Term': [
+                        { name: 'Mathematics', file: '/downloads/ss1/second-term/mathematics.pdf', type: 'pdf' },
+                        { name: 'English Language', file: '/downloads/ss1/second-term/english.pdf', type: 'pdf' },
+                        { name: 'Physics', file: '/downloads/ss1/second-term/physics.pdf', type: 'pdf' },
+                        { name: 'Chemistry', file: '/downloads/ss1/second-term/chemistry.pdf', type: 'pdf' },
+                        { name: 'Biology', file: '/downloads/ss1/second-term/biology.pdf', type: 'pdf' },
+                        { name: 'Economics', file: '/downloads/ss1/second-term/economics.pdf', type: 'pdf' },
+                        { name: 'Geography', file: '/downloads/ss1/second-term/geography.pdf', type: 'pdf' },
+                        { name: 'Further Mathematics', file: '/downloads/ss1/second-term/further-math.zip', type: 'zip' }
+                    ],
+                    'Third Term': [
+                        { name: 'Mathematics', file: '/downloads/ss1/third-term/mathematics.pdf', type: 'pdf' },
+                        { name: 'English Language', file: '/downloads/ss1/third-term/english.pdf', type: 'pdf' },
+                        { name: 'Physics', file: '/downloads/ss1/third-term/physics.pdf', type: 'pdf' },
+                        { name: 'Chemistry', file: '/downloads/ss1/third-term/chemistry.pdf', type: 'pdf' },
+                        { name: 'Biology', file: '/downloads/ss1/third-term/biology.pdf', type: 'pdf' },
+                        { name: 'Agricultural Science', file: '/downloads/ss1/third-term/agriculture.pdf', type: 'pdf' },
+                        { name: 'Commerce', file: '/downloads/ss1/third-term/commerce.pdf', type: 'pdf' },
+                        { name: 'Accounting', file: '/downloads/ss1/third-term/accounting.docx', type: 'docx' }
+                    ]
+                },
+                'SS 2': {
+                    'First Term': [
+                        { name: 'Mathematics', file: '/downloads/ss2/first-term/mathematics.pdf', type: 'pdf' },
+                        { name: 'English Language', file: '/downloads/ss2/first-term/english.pdf', type: 'pdf' },
+                        { name: 'Physics', file: '/downloads/ss2/first-term/physics.pdf', type: 'pdf' },
+                        { name: 'Chemistry', file: '/downloads/ss2/first-term/chemistry.pdf', type: 'pdf' },
+                        { name: 'Biology', file: '/downloads/ss2/first-term/biology.pdf', type: 'pdf' },
+                        { name: 'Economics', file: '/downloads/ss2/first-term/economics.pdf', type: 'pdf' },
+                        { name: 'Government', file: '/downloads/ss2/first-term/government.pdf', type: 'pdf' },
+                        { name: 'Literature in English', file: '/downloads/ss2/first-term/literature.docx', type: 'docx' }
+                    ],
+                    'Second Term': [
+                        { name: 'Mathematics', file: '/downloads/ss2/second-term/mathematics.pdf', type: 'pdf' },
+                        { name: 'English Language', file: '/downloads/ss2/second-term/english.pdf', type: 'pdf' },
+                        { name: 'Physics', file: '/downloads/ss2/second-term/physics.pdf', type: 'pdf' },
+                        { name: 'Chemistry', file: '/downloads/ss2/second-term/chemistry.pdf', type: 'pdf' },
+                        { name: 'Biology', file: '/downloads/ss2/second-term/biology.pdf', type: 'pdf' },
+                        { name: 'Economics', file: '/downloads/ss2/second-term/economics.pdf', type: 'pdf' },
+                        { name: 'Geography', file: '/downloads/ss2/second-term/geography.pdf', type: 'pdf' },
+                        { name: 'Further Mathematics', file: '/downloads/ss2/second-term/further-math.zip', type: 'zip' }
+                    ],
+                    'Third Term': [
+                        { name: 'Mathematics', file: '/downloads/ss2/third-term/mathematics.pdf', type: 'pdf' },
+                        { name: 'English Language', file: '/downloads/ss2/third-term/english.pdf', type: 'pdf' },
+                        { name: 'Physics', file: '/downloads/ss2/third-term/physics.pdf', type: 'pdf' },
+                        { name: 'Chemistry', file: '/downloads/ss2/third-term/chemistry.pdf', type: 'pdf' },
+                        { name: 'Biology', file: '/downloads/ss2/third-term/biology.pdf', type: 'pdf' },
+                        { name: 'Agricultural Science', file: '/downloads/ss2/third-term/agriculture.pdf', type: 'pdf' },
+                        { name: 'Commerce', file: '/downloads/ss2/third-term/commerce.pdf', type: 'pdf' },
+                        { name: 'Accounting', file: '/downloads/ss2/third-term/accounting.docx', type: 'docx' }
+                    ]
+                },
+                'SS 3': {
+                    'First Term': [
+                        { name: 'Mathematics', file: '/downloads/ss3/first-term/mathematics.pdf', type: 'pdf' },
+                        { name: 'English Language', file: '/downloads/ss3/first-term/english.pdf', type: 'pdf' },
+                        { name: 'Physics', file: '/downloads/ss3/first-term/physics.pdf', type: 'pdf' },
+                        { name: 'Chemistry', file: '/downloads/ss3/first-term/chemistry.pdf', type: 'pdf' },
+                        { name: 'Biology', file: '/downloads/ss3/first-term/biology.pdf', type: 'pdf' },
+                        { name: 'Economics', file: '/downloads/ss3/first-term/economics.pdf', type: 'pdf' },
+                        { name: 'Government', file: '/downloads/ss3/first-term/government.pdf', type: 'pdf' },
+                        { name: 'Literature in English', file: '/downloads/ss3/first-term/literature.docx', type: 'docx' }
+                    ],
+                    'Second Term': [
+                        { name: 'Mathematics', file: '/downloads/ss3/second-term/mathematics.pdf', type: 'pdf' },
+                        { name: 'English Language', file: '/downloads/ss3/second-term/english.pdf', type: 'pdf' },
+                        { name: 'Physics', file: '/downloads/ss3/second-term/physics.pdf', type: 'pdf' },
+                        { name: 'Chemistry', file: '/downloads/ss3/second-term/chemistry.pdf', type: 'pdf' },
+                        { name: 'Biology', file: '/downloads/ss3/second-term/biology.pdf', type: 'pdf' },
+                        { name: 'Economics', file: '/downloads/ss3/second-term/economics.pdf', type: 'pdf' },
+                        { name: 'Geography', file: '/downloads/ss3/second-term/geography.pdf', type: 'pdf' },
+                        { name: 'Further Mathematics', file: '/downloads/ss3/second-term/further-math.zip', type: 'zip' }
+                    ],
+                    'Third Term': [
+                        { name: 'Mathematics', file: '/downloads/ss3/third-term/mathematics.pdf', type: 'pdf' },
+                        { name: 'English Language', file: '/downloads/ss3/third-term/english.pdf', type: 'pdf' },
+                        { name: 'Physics', file: '/downloads/ss3/third-term/physics.pdf', type: 'pdf' },
+                        { name: 'Chemistry', file: '/downloads/ss3/third-term/chemistry.pdf', type: 'pdf' },
+                        { name: 'Biology', file: '/downloads/ss3/third-term/biology.pdf', type: 'pdf' },
+                        { name: 'Agricultural Science', file: '/downloads/ss3/third-term/agriculture.pdf', type: 'pdf' },
+                        { name: 'Commerce', file: '/downloads/ss3/third-term/commerce.pdf', type: 'pdf' },
+                        { name: 'Accounting', file: '/downloads/ss3/third-term/accounting.docx', type: 'docx' }
+                    ]
+                }
+            }
+        };
+
+        // ========================================================================
+        // STATE MANAGEMENT
+        // Tracks current user navigation state
+        // ========================================================================
+        let currentLevel = 'junior';  // Current education level (junior or senior)
+        let currentClass = '';         // Current selected class (e.g., "JSS 1")
+        let currentTerm = '';          // Current selected term (e.g., "First Term")
+
+        // ========================================================================
+        // DOM ELEMENTS
+        // ========================================================================
+        const loginScreen = document.getElementById('loginScreen');
+        const mainApp = document.getElementById('mainApp');
+        const passwordInput = document.getElementById('passwordInput');
+        const loginBtn = document.getElementById('loginBtn');
+        const errorMessage = document.getElementById('errorMessage');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const juniorTab = document.getElementById('juniorTab');
+        const seniorTab = document.getElementById('seniorTab');
+        const juniorClasses = document.getElementById('juniorClasses');
+        const seniorClasses = document.getElementById('seniorClasses');
+        const termList = document.getElementById('termList');
+        const subjectList = document.getElementById('subjectList');
+        const termTitle = document.getElementById('termTitle');
+        const subjectTitle = document.getElementById('subjectTitle');
+        const backToClasses = document.getElementById('backToClasses');
+        const backToTerms = document.getElementById('backToTerms');
+        const subjectButtons = document.getElementById('subjectButtons');
+
+        // ========================================================================
+        // LOGIN FUNCTIONALITY
+        // ========================================================================
+        loginBtn.addEventListener('click', handleLogin);
+        passwordInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                handleLogin();
+            }
+        });
+
+        function handleLogin() {
+            const password = passwordInput.value;
+            
+            if (password === CORRECT_PASSWORD) {
+                loginScreen.classList.add('hidden');
+                mainApp.classList.remove('hidden');
+                passwordInput.value = '';
+                errorMessage.classList.remove('show');
+            } else {
+                errorMessage.classList.add('show');
+                passwordInput.value = '';
+                setTimeout(() => {
+                    errorMessage.classList.remove('show');
+                }, 3000);
+            }
+        }
+
+        // ========================================================================
+        // LOGOUT FUNCTIONALITY
+        // ========================================================================
+        logoutBtn.addEventListener('click', function() {
+            mainApp.classList.add('hidden');
+            loginScreen.classList.remove('hidden');
+            resetApp();
+        });
+
+        // ========================================================================
+        // TAB SWITCHING (LEVEL SELECTION)
+        // Only shows classes for the selected level
+        // ========================================================================
+        juniorTab.addEventListener('click', function() {
+            switchTab('junior');
+        });
+
+        seniorTab.addEventListener('click', function() {
+            switchTab('senior');
+        });
+
+        function switchTab(level) {
+            currentLevel = level;
+            
+            // Update tab active state
+            if (level === 'junior') {
+                juniorTab.classList.add('active');
+                seniorTab.classList.remove('active');
+                juniorClasses.classList.remove('hidden');
+                seniorClasses.classList.add('hidden');
+            } else {
+                seniorTab.classList.add('active');
+                juniorTab.classList.remove('active');
+                seniorClasses.classList.remove('hidden');
+                juniorClasses.classList.add('hidden');
+            }
+            
+            // Hide term and subject sections when switching tabs
+            termList.classList.add('hidden');
+            subjectList.classList.add('hidden');
+        }
+
+        // ========================================================================
+        // CLASS SELECTION
+        // When a class is clicked, show terms for that specific class
+        // ========================================================================
+        const classButtons = document.querySelectorAll('.class-btn');
+        classButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                currentClass = this.getAttribute('data-class');
+                currentLevel = this.getAttribute('data-level');
+                showTermSelection();
+            });
+        });
+
+        function showTermSelection() {
+            // Hide all class lists
+            juniorClasses.classList.add('hidden');
+            seniorClasses.classList.add('hidden');
+            
+            // Show term selection
+            termList.classList.remove('hidden');
+            subjectList.classList.add('hidden');
+            
+            // Update title with current class
+            termTitle.textContent = currentClass + ' - Select Term';
+        }
+
+        // ========================================================================
+        // BACK TO CLASSES
+        // Returns to the class list for the current level
+        // ========================================================================
+        backToClasses.addEventListener('click', function() {
+            termList.classList.add('hidden');
+            
+            // Show appropriate class list based on current level
+            if (currentLevel === 'junior') {
+                juniorClasses.classList.remove('hidden');
+            } else {
+                seniorClasses.classList.remove('hidden');
+            }
+        });
+
+        // ========================================================================
+        // TERM SELECTION
+        // When a term is clicked, show subjects for that class and term
+        // ========================================================================
+        const termButtons = document.querySelectorAll('.term-btn');
+        termButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                currentTerm = this.getAttribute('data-term');
+                showSubjectSelection();
+            });
+        });
+
+        // ========================================================================
+        // SUBJECT SELECTION (CRITICAL FUNCTION)
+        // Retrieves the EXACT subjects for the selected Class + Term combination
+        // Each class-term combination has UNIQUE files - NO SHARING
+        // ========================================================================
+        function showSubjectSelection() {
+            termList.classList.add('hidden');
+            subjectList.classList.remove('hidden');
+            
+            // Update title with class and term
+            subjectTitle.textContent = currentClass + ' - ' + currentTerm;
+            
+            // Clear previous subjects
+            subjectButtons.innerHTML = '';
+            
+            // Get subjects for the SPECIFIC class and term
+            // Navigation: resourcesDatabase[level][class][term]
+            const subjects = resourcesDatabase[currentLevel][currentClass][currentTerm];
+            
+            // Generate subject buttons dynamically
+            subjects.forEach(subject => {
+                const btn = document.createElement('button');
+                btn.className = 'subject-btn';
+                btn.innerHTML = `
+                    <span>
+                        ${subject.name}
+                        <span class="file-badge">${subject.type}</span>
+                    </span>
+                    <span class="arrow">›</span>
+                `;
+                
+                // Add click event to download the SPECIFIC file for this subject
+                btn.addEventListener('click', function() {
+                    downloadFile(subject);
+                });
+                
+                subjectButtons.appendChild(btn);
+            });
+        }
+
+        // ========================================================================
+        // BACK TO TERMS
+        // Returns to term selection for the current class
+        // ========================================================================
+        backToTerms.addEventListener('click', function() {
+            subjectList.classList.add('hidden');
+            termList.classList.remove('hidden');
+        });
+
+        // ========================================================================
+        // FILE ACCESS FUNCTIONALITY
+        // Opens the UNIQUE file link for each Class + Term + Subject combination
+        // Opens the file URL in a new browser tab
+        // ========================================================================
+        function downloadFile(subject) {
+            // Open the file URL in a new tab
+            window.open(subject.file, '_blank');
+            
+            // Log access action for debugging/tracking
+            console.log('========================================');
+            console.log('FILE LINK OPENED');
+            console.log('========================================');
+            console.log('Subject:', subject.name);
+            console.log('Level:', currentLevel);
+            console.log('Class:', currentClass);
+            console.log('Term:', currentTerm);
+            console.log('File Path:', subject.file);
+            console.log('File Type:', subject.type);
+            console.log('========================================');
+        }
+
+        // ========================================================================
+        // RESET APP STATE
+        // Called on logout to reset all navigation state
+        // ========================================================================
+        function resetApp() {
+            // Reset all state variables to defaults
+            currentLevel = 'junior';
+            currentClass = '';
+            currentTerm = '';
+            
+            // Reset tab states
+            juniorTab.classList.add('active');
+            seniorTab.classList.remove('active');
+            
+            // Reset visibility - show junior classes only
+            juniorClasses.classList.remove('hidden');
+            seniorClasses.classList.add('hidden');
+            termList.classList.add('hidden');
+            subjectList.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
