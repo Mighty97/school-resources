@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Portal - Resources</title>
     <style>
         /* --- ENHANCED STYLES --- */
-        
+
         * {
             margin: 0;
             padding: 0;
@@ -66,6 +67,7 @@
                 opacity: 0;
                 transform: translateY(-30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -155,9 +157,26 @@
         }
 
         @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            10%, 30%, 50%, 70%, 90% { transform: translateX(-8px); }
-            20%, 40%, 60%, 80% { transform: translateX(8px); }
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: translateX(-8px);
+            }
+
+            20%,
+            40%,
+            60%,
+            80% {
+                transform: translateX(8px);
+            }
         }
 
         .hidden {
@@ -209,6 +228,7 @@
                 opacity: 0;
                 transform: translateY(-20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -255,6 +275,7 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
@@ -436,13 +457,14 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Login Screen -->
     <div class="login-screen" id="loginScreen">
         <div class="login-container">
             <h1 class="login-title">📚 Teacher's Resources Centre</h1>
             <p class="login-subtitle">Enter resources password to continue</p>
-            
+
             <div class="error-message" id="errorMessage">
                 Incorrect password. Please try again.
             </div>
@@ -549,201 +571,313 @@
             junior: {
                 'JSS 1': {
                     'First Term': [
-                        { name: 'Mathematics', file: '/downloads/jss1/first-term/mathematics.pdf', type: 'pdf' },
-                        { name: 'English Language', file: '/downloads/jss1/first-term/english.pdf', type: 'pdf' },
-                        { name: 'Basic Science', file: '/downloads/jss1/first-term/basic-science.pdf', type: 'pdf' },
-                        { name: 'Civic Education', file: '/downloads/jss1/first-term/civic-education.pdf', type: 'pdf' },
-                        { name: 'Computer Studies', file: '/downloads/jss1/first-term/computer.docx', type: 'docx' },
-                        { name: 'Social Studies', file: '/downloads/jss1/first-term/social-studies.pdf', type: 'pdf' },
-                        { name: 'Home Economics', file: '/downloads/jss1/first-term/home-economics.pdf', type: 'pdf' },
-                        { name: 'Cultural & Creative Arts', file: '/downloads/jss1/first-term/cca.pdf', type: 'pdf' }
+                        { name: 'English Language', file: '', type: 'Docx' },
+                        { name: 'Mathematics', file: '', type: 'Docx' },
+                        { name: 'PHE', file: '/downloads/jss2/first-term/basic-science.Docx', type: 'Docx' },
+                        { name: 'CRS', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'History', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Social and Citizenship Studies', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'CCA', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'French', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' },
+                        { name: 'Intermediate Science', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'Digital Technology', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Business Studies', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'Livestock Farming', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Yoruba', file: '', type: 'Docx' },
+                        { name: 'Computer Hardware and GSM Repairs', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' }
+
                     ],
                     'Second Term': [
-                        { name: 'Mathematics', file: 'https://docs.google.com/document/d/10UQyaFP0n4ZKGsJTqmBx2_xrH4p6HSrt/edit?usp=sharing&ouid=107502952797677309877&rtpof=true&sd=true', type: 'pdf' },
-                        { name: 'English Language', file: '/downloads/jss1/second-term/english.pdf', type: 'pdf' },
-                        { name: 'Basic Science', file: '/downloads/jss1/second-term/basic-science.pdf', type: 'pdf' },
-                        { name: 'Civic Education', file: '/downloads/jss1/second-term/civic-education.pdf', type: 'pdf' },
-                        { name: 'Computer Studies', file: '/downloads/jss1/second-term/computer.zip', type: 'zip' },
-                        { name: 'Social Studies', file: '/downloads/jss1/second-term/social-studies.pdf', type: 'pdf' },
-                        { name: 'Agricultural Science', file: '/downloads/jss1/second-term/agriculture.pdf', type: 'pdf' },
-                        { name: 'French Language', file: '/downloads/jss1/second-term/french.docx', type: 'docx' }
+                        { name: 'English Language', file: 'https://docs.google.com/document/d/1Yuwyw-FBkVnTUYwVBT56bj5S2p6_OU4I/edit?rtpof=true&tab=t.0', type: 'Docx' },
+                        { name: 'Mathematics', file: 'https://docs.google.com/document/d/1Z4xK8RnOqTxe21ReX5xBVCNXktBRHCpE/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'PHE', file: 'https://docs.google.com/document/d/1Z7nEDaLCcaXB_3hjKQhrEuctMsr8sWEw/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'CRS', file: 'https://docs.google.com/document/d/1Yiu_7NnQUqgb3IVXmVQx1-HhImihxdjB/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'History', file: '', type: 'docx' },
+                        { name: 'Social and Citizenship Studies', file: 'https://docs.google.com/document/d/1ZHnQ8DUeuqD_OiIx419bnea0RGuAq9lZ/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'CCA', file: 'https://docs.google.com/document/d/1Z0LG5bcWq4OH9oXde8WnFW-g-d1uc0QI/edit', type: 'Docx' },
+                        { name: 'French', file: 'https://docs.google.com/document/d/1vVbxsLEVahdNSj4qRVuqKVn1pZ6fzol8/edit?rtpof=true&tab=t.0', type: 'Docx' },
+                        { name: 'Intermediate Science', file: 'https://docs.google.com/document/d/1YYToU_YwwjzJhtq6OAu9FIUI64jqFOYv/edit?rtpof=true&tab=t.0', type: 'Docx' },
+                        { name: 'Digital Technology', file: 'https://docs.google.com/document/d/1Yui2_heprO9gqUjGzHz6HEFpThswiuy5/edit', type: 'docx' },
+                        { name: 'Business Studies', file: 'https://docs.google.com/document/d/1YhPPHl7uF9AKwIrUgAgmzVuqv-jaI1xQ/edit?rtpof=true&tab=t.0', type: 'Docx' },
+                        { name: 'Livestock Farming', file: '', type: 'Docx' },
+                        { name: 'Yoruba', file: 'https://docs.google.com/document/d/1ZKMqRigeHlTmaKiMxrWulSX13t1fP72H/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'Computer Hardware and GSM Repairs', file: '', type: 'Docx' }
                     ],
                     'Third Term': [
-                        { name: 'Mathematics', file: '/downloads/jss1/third-term/mathematics.pdf', type: 'pdf' },
-                        { name: 'English Language', file: '/downloads/jss1/third-term/english.pdf', type: 'pdf' },
-                        { name: 'Basic Science', file: '/downloads/jss1/third-term/basic-science.pdf', type: 'pdf' },
-                        { name: 'Civic Education', file: '/downloads/jss1/third-term/civic-education.pdf', type: 'pdf' },
-                        { name: 'Computer Studies', file: '/downloads/jss1/third-term/computer.pdf', type: 'pdf' },
-                        { name: 'Business Studies', file: '/downloads/jss1/third-term/business-studies.pdf', type: 'pdf' },
-                        { name: 'Physical & Health Education', file: '/downloads/jss1/third-term/phe.pdf', type: 'pdf' },
-                        { name: 'Religious Studies', file: '/downloads/jss1/third-term/religion.pdf', type: 'pdf' }
+                        { name: 'English Language', file: '/downloads/jss2/first-term/mathematics.Docx', type: 'Docx' },
+                        { name: 'Mathematics', file: '/downloads/jss2/first-term/english.Docx', type: 'Docx' },
+                        { name: 'PHE', file: '/downloads/jss2/first-term/basic-science.Docx', type: 'Docx' },
+                        { name: 'CRS', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'History', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Social and Citizenship Studies', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'CCA', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'French', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' },
+                        { name: 'Intermediate Science', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'Digital Technology', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Business Studies', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'Livestock Farming', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Yoruba', file: '', type: 'Docx' },
+                        { name: 'Computer Hardware and GSM Repairs', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' }
                     ]
                 },
                 'JSS 2': {
                     'First Term': [
-                        { name: 'Mathematics', file: '/downloads/jss2/first-term/mathematics.pdf', type: 'pdf' },
-                        { name: 'English Language', file: '/downloads/jss2/first-term/english.pdf', type: 'pdf' },
-                        { name: 'Basic Science', file: '/downloads/jss2/first-term/basic-science.pdf', type: 'pdf' },
-                        { name: 'Civic Education', file: '/downloads/jss2/first-term/civic-education.pdf', type: 'pdf' },
-                        { name: 'Computer Studies', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
-                        { name: 'Social Studies', file: '/downloads/jss2/first-term/social-studies.pdf', type: 'pdf' },
-                        { name: 'Home Economics', file: '/downloads/jss2/first-term/home-economics.pdf', type: 'pdf' },
-                        { name: 'Agricultural Science', file: '/downloads/jss2/first-term/agriculture.pdf', type: 'pdf' }
+                        { name: 'English Language', file: '', type: 'Docx' },
+                        { name: 'Mathematics', file: '', type: 'Docx' },
+                        { name: 'PHE', file: '/downloads/jss2/first-term/basic-science.Docx', type: 'Docx' },
+                        { name: 'CRS', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'History', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Social and Citizenship Studies', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'CCA', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'French', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' },
+                        { name: 'Intermediate Science', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'Digital Technology', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Business Studies', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'Livestock Farming', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Yoruba', file: '', type: 'Docx' },
+                        { name: 'Computer Hardware and GSM Repairs', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' }
+
                     ],
                     'Second Term': [
-                        { name: 'Mathematics', file: '/downloads/jss2/second-term/mathematics.pdf', type: 'pdf' },
-                        { name: 'English Language', file: '/downloads/jss2/second-term/english.pdf', type: 'pdf' },
-                        { name: 'Basic Science', file: '/downloads/jss2/second-term/basic-science.pdf', type: 'pdf' },
-                        { name: 'Civic Education', file: '/downloads/jss2/second-term/civic-education.pdf', type: 'pdf' },
-                        { name: 'Computer Studies', file: '/downloads/jss2/second-term/computer.zip', type: 'zip' },
-                        { name: 'Social Studies', file: '/downloads/jss2/second-term/social-studies.pdf', type: 'pdf' },
-                        { name: 'French Language', file: '/downloads/jss2/second-term/french.docx', type: 'docx' },
-                        { name: 'Business Studies', file: '/downloads/jss2/second-term/business-studies.pdf', type: 'pdf' }
+                        { name: 'English Language', file: 'https://docs.google.com/document/d/1Zq0tAsY5q48962Dm3B7ERuvvuu3MQNQ5/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'Mathematics', file: 'https://docs.google.com/document/d/1_4WEl6Fv-Ydf6-4ytbIXnyRt0pwmDg24/edit', type: 'Docx' },
+                        { name: 'PHE', file: 'https://docs.google.com/document/d/1_5qa3OhXJRjQFt7XgVHKRJEPLYAUWx1Z/edit?rtpof=true', type: 'Docx' },
+                        { name: 'CRS', file: 'https://docs.google.com/document/d/1ZgXloUxezkv0zrBzm6UW6iic88kHT6LO/edit?rtpof=true&tab=t.0', type: 'Docx' },
+                        { name: 'History', file: '', type: 'docx' },
+                        { name: 'Social and Citizenship Studies', file: 'https://docs.google.com/document/d/1_AybxzAEsLu-wWeFYwcXud_tP_tXlxdg/edit?rtpof=true&tab=t.0', type: 'Docx' },
+                        { name: 'CCA', file: 'https://docs.google.com/document/d/1ZuuQQB-qlhZfVpDOWntHswzgVYfRNKUi/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'French', file: 'https://drive.google.com/drive/folders/1YTpBPXUSuVIPlcN9alR-IAaP24AXhF2v', type: 'Docx' },
+                        { name: 'Intermediate Science', file: 'https://docs.google.com/document/d/1ZQQxA7zSP19IL54dtJ6H58ph3SQWmudp/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'Digital Technology', file: '', type: 'docx' },
+                        { name: 'Business Studies', file: 'https://docs.google.com/document/d/1Ze1pYyMgHcq7LJRW6W2CGbyARSfMyo78/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'Livestock Farming', file: '', type: 'Docx' },
+                        { name: 'Yoruba', file: 'https://docs.google.com/document/d/1_B0WUXsPhWgneeKvmHKtOmhoBdIuE27-/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'Computer Hardware and GSM Repairs', file: '', type: 'Docx' }
                     ],
                     'Third Term': [
-                        { name: 'Mathematics', file: '/downloads/jss2/third-term/mathematics.pdf', type: 'pdf' },
-                        { name: 'English Language', file: '/downloads/jss2/third-term/english.pdf', type: 'pdf' },
-                        { name: 'Basic Science', file: '/downloads/jss2/third-term/basic-science.pdf', type: 'pdf' },
-                        { name: 'Civic Education', file: '/downloads/jss2/third-term/civic-education.pdf', type: 'pdf' },
-                        { name: 'Computer Studies', file: '/downloads/jss2/third-term/computer.pdf', type: 'pdf' },
-                        { name: 'Cultural & Creative Arts', file: '/downloads/jss2/third-term/cca.pdf', type: 'pdf' },
-                        { name: 'Physical & Health Education', file: '/downloads/jss2/third-term/phe.pdf', type: 'pdf' },
-                        { name: 'Religious Studies', file: '/downloads/jss2/third-term/religion.pdf', type: 'pdf' }
+                        { name: 'English Language', file: '/downloads/jss2/first-term/mathematics.Docx', type: 'Docx' },
+                        { name: 'Mathematics', file: '/downloads/jss2/first-term/english.Docx', type: 'Docx' },
+                        { name: 'PHE', file: '/downloads/jss2/first-term/basic-science.Docx', type: 'Docx' },
+                        { name: 'CRS', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'History', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Social and Citizenship Studies', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'CCA', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'French', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' },
+                        { name: 'Intermediate Science', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'Digital Technology', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Business Studies', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'Livestock Farming', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Yoruba', file: '', type: 'Docx' },
+                        { name: 'Computer Hardware and GSM Repairs', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' }
                     ]
                 },
                 'JSS 3': {
                     'First Term': [
-                        { name: 'Mathematics', file: '/downloads/jss3/first-term/mathematics.pdf', type: 'pdf' },
-                        { name: 'English Language', file: '/downloads/jss3/first-term/english.pdf', type: 'pdf' },
-                        { name: 'Basic Science', file: '/downloads/jss3/first-term/basic-science.pdf', type: 'pdf' },
-                        { name: 'Civic Education', file: '/downloads/jss3/first-term/civic-education.pdf', type: 'pdf' },
-                        { name: 'Computer Studies', file: '/downloads/jss3/first-term/computer.docx', type: 'docx' },
-                        { name: 'Social Studies', file: '/downloads/jss3/first-term/social-studies.pdf', type: 'pdf' },
-                        { name: 'Business Studies', file: '/downloads/jss3/first-term/business-studies.pdf', type: 'pdf' },
-                        { name: 'Agricultural Science', file: '/downloads/jss3/first-term/agriculture.pdf', type: 'pdf' }
+                        { name: 'English Language', file: '', type: 'Docx' },
+                        { name: 'Mathematics', file: '', type: 'Docx' },
+                        { name: 'PHE', file: '/downloads/jss2/first-term/basic-science.Docx', type: 'Docx' },
+                        { name: 'CRS', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'History', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Social and Citizenship Studies', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'CCA', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'French', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' },
+                        { name: 'Intermediate Science', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'Digital Technology', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Business Studies', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'Livestock Farming', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Yoruba', file: '', type: 'Docx' },
+                        { name: 'Computer Hardware and GSM Repairs', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' }
+
                     ],
                     'Second Term': [
-                        { name: 'Mathematics', file: '/downloads/jss3/second-term/mathematics.pdf', type: 'pdf' },
-                        { name: 'English Language', file: '/downloads/jss3/second-term/english.pdf', type: 'pdf' },
-                        { name: 'Basic Science', file: '/downloads/jss3/second-term/basic-science.pdf', type: 'pdf' },
-                        { name: 'Civic Education', file: '/downloads/jss3/second-term/civic-education.pdf', type: 'pdf' },
-                        { name: 'Computer Studies', file: '/downloads/jss3/second-term/computer.zip', type: 'zip' },
-                        { name: 'Social Studies', file: '/downloads/jss3/second-term/social-studies.pdf', type: 'pdf' },
-                        { name: 'French Language', file: '/downloads/jss3/second-term/french.docx', type: 'docx' },
-                        { name: 'Home Economics', file: '/downloads/jss3/second-term/home-economics.pdf', type: 'pdf' }
+                        { name: 'English Language', file: 'https://docs.google.com/document/d/1a-IRzo9CxPLgF-zUtd29katU6tk3Pbym/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'Mathematics', file: 'https://docs.google.com/document/d/1aLMeUJ62xcZi9HNHIbM0PCLxvohJ6hlM/edit', type: 'Docx' },
+                        { name: 'PHE', file: 'https://docs.google.com/document/d/1aM5JCprXPoXJd9eFIeO-Gv3HUmu0JDg3/edit?rtpof=true&tab=t.0', type: 'Docx' },
+                        { name: 'CRS', file: '', type: 'Docx' },
+                        { name: 'History', file: '', type: 'docx' },
+                        { name: 'Social and Citizenship Studies', file: 'https://docs.google.com/document/d/1aM6JwWjSQe1uJPlwclO0V1L3sLDlGgML/edit', type: 'Docx' },
+                        { name: 'CCA', file: 'https://docs.google.com/document/d/1aHjVOOGJgVdyJd_VxXXflOwi7dSM4ROA/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'Intermediate Science', file: 'https://docs.google.com/document/d/1_XWYAPi3Z0fOgxofJamf056RZ_zjY3fm/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'Digital Technology', file: '', type: 'docx' },
+                        { name: 'Business Studies', file: 'https://docs.google.com/document/d/1_q0v6hCKTkkT75BjOn_ooJJ5LBK4nyfZ/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'Livestock Farming', file: '', type: 'Docx' },
+                        { name: 'Yoruba', file: 'https://docs.google.com/document/d/1aOCRkSqMySGkQVbh9Br-lXxSBxPscjJi/edit?rtpof=true&tab=t.0', type: 'Docx' },
+                        { name: 'Computer Hardware and GSM Repairs', file: '', type: 'Docx' }
                     ],
                     'Third Term': [
-                        { name: 'Mathematics', file: '/downloads/jss3/third-term/mathematics.pdf', type: 'pdf' },
-                        { name: 'English Language', file: '/downloads/jss3/third-term/english.pdf', type: 'pdf' },
-                        { name: 'Basic Science', file: '/downloads/jss3/third-term/basic-science.pdf', type: 'pdf' },
-                        { name: 'Civic Education', file: '/downloads/jss3/third-term/civic-education.pdf', type: 'pdf' },
-                        { name: 'Computer Studies', file: '/downloads/jss3/third-term/computer.pdf', type: 'pdf' },
-                        { name: 'Business Studies', file: '/downloads/jss3/third-term/business-studies.pdf', type: 'pdf' },
-                        { name: 'Physical & Health Education', file: '/downloads/jss3/third-term/phe.pdf', type: 'pdf' },
-                        { name: 'Religious Studies', file: '/downloads/jss3/third-term/religion.pdf', type: 'pdf' }
+                        { name: 'English Language', file: '/downloads/jss2/first-term/mathematics.Docx', type: 'Docx' },
+                        { name: 'Mathematics', file: '/downloads/jss2/first-term/english.Docx', type: 'Docx' },
+                        { name: 'PHE', file: '/downloads/jss2/first-term/basic-science.Docx', type: 'Docx' },
+                        { name: 'CRS', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'History', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Social and Citizenship Studies', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'CCA', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'French', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' },
+                        { name: 'Intermediate Science', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'Digital Technology', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Business Studies', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'Livestock Farming', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Yoruba', file: '', type: 'Docx' },
+                        { name: 'Computer Hardware and GSM Repairs', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' }
                     ]
                 }
             },
             senior: {
                 'SS 1': {
                     'First Term': [
-                        { name: 'Mathematics', file: '/downloads/ss1/first-term/mathematics.pdf', type: 'pdf' },
-                        { name: 'English Language', file: '/downloads/ss1/first-term/english.pdf', type: 'pdf' },
-                        { name: 'Physics', file: '/downloads/ss1/first-term/physics.pdf', type: 'pdf' },
-                        { name: 'Chemistry', file: '/downloads/ss1/first-term/chemistry.pdf', type: 'pdf' },
-                        { name: 'Biology', file: '/downloads/ss1/first-term/biology.pdf', type: 'pdf' },
-                        { name: 'Economics', file: '/downloads/ss1/first-term/economics.pdf', type: 'pdf' },
-                        { name: 'Government', file: '/downloads/ss1/first-term/government.pdf', type: 'pdf' },
-                        { name: 'Literature in English', file: '/downloads/ss1/first-term/literature.docx', type: 'docx' }
+                        { name: 'English Language', file: '', type: 'Docx' },
+                        { name: 'Mathematics', file: '', type: 'Docx' },
+                        { name: 'Citizenship and Heritage Studies', file: '/downloads/jss2/first-term/basic-science.Docx', type: 'Docx' },
+                        { name: 'Digital Technology', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'Computer Hardware and GSM Repairs', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Marketing', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'Biology', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Government', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' },
+                        { name: 'Chemistry', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'CRS', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Physics', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'Literature-In-Eng', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Economics', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Agricultural Science', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' }
                     ],
                     'Second Term': [
-                        { name: 'Mathematics', file: '/downloads/ss1/second-term/mathematics.pdf', type: 'pdf' },
-                        { name: 'English Language', file: '/downloads/ss1/second-term/english.pdf', type: 'pdf' },
-                        { name: 'Physics', file: '/downloads/ss1/second-term/physics.pdf', type: 'pdf' },
-                        { name: 'Chemistry', file: '/downloads/ss1/second-term/chemistry.pdf', type: 'pdf' },
-                        { name: 'Biology', file: '/downloads/ss1/second-term/biology.pdf', type: 'pdf' },
-                        { name: 'Economics', file: '/downloads/ss1/second-term/economics.pdf', type: 'pdf' },
-                        { name: 'Geography', file: '/downloads/ss1/second-term/geography.pdf', type: 'pdf' },
-                        { name: 'Further Mathematics', file: '/downloads/ss1/second-term/further-math.zip', type: 'zip' }
+                        { name: 'English Language', file: 'https://docs.google.com/document/d/1kImnYZBlRJXYaHTBSjNc6Fd-8b-psYU0/edit?rtpof=true&tab=t.0', type: 'Docx' },
+                        { name: 'Mathematics', file: 'https://docs.google.com/document/d/1gx8rOcvOXLvdW1nKOK5TzLK2ddkR51F9/edit?rtpof=true&tab=t.0', type: 'Docx' },
+                        { name: 'Citizenship and Heritage Studies', file: 'https://drive.google.com/drive/folders/1wlMtrWvHMf7WeQMlLOSrGmrr0m1DNJqP', type: 'pdf' },
+                        { name: 'Digital Technology', file: 'https://drive.google.com/drive/folders/1wlMtrWvHMf7WeQMlLOSrGmrr0m1DNJqP', type: 'pdf' },
+                        { name: 'Computer Hardware and GSM Repairs', file: 'https://drive.google.com/drive/folders/1wlMtrWvHMf7WeQMlLOSrGmrr0m1DNJqP', type: 'pdf' },
+                        { name: 'Marketing', file: 'https://drive.google.com/drive/folders/1wlMtrWvHMf7WeQMlLOSrGmrr0m1DNJqP', type: 'pdf' },
+                        { name: 'Biology', file: 'https://docs.google.com/document/d/1gcqTgBkuh70LXhZCrguklekODClOEK_s/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'Government', file: 'https://docs.google.com/document/d/1kb1MPCwwgB61Vsi8J5rpVTuOzdluAyPH/edit?rtpof=true&tab=t.0', type: 'Docx' },
+                        { name: 'Chemistry', file: 'https://docs.google.com/document/d/1jljwnD95GZpNSGxOAYz7aHUSi6cpS67Q/edit?rtpof=true&tab=t.0', type: 'Docx' },
+                        { name: 'CRS', file: 'https://docs.google.com/document/d/1jaUHmt-khUAkDKJhUd5MI4l7H_xXzkXv/edit#heading=h.gjdgxs', type: 'docx' },
+                        { name: 'Physics', file: 'https://docs.google.com/document/d/1h-P9NuxQ1cEU6gHurXaxSiYpYbPiHlIE/edit?rtpof=true&tab=t.0', type: 'Docx' },
+                        { name: 'Literature-In-Eng', file: 'https://drive.google.com/drive/folders/1wlMtrWvHMf7WeQMlLOSrGmrr0m1DNJqP', type: 'pdf' },
+                        { name: 'Economics', file: 'https://docs.google.com/document/d/1kBTKXlOn4syo-4DV_YOhhaIDhB48FodM/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'Agricultural Science', file: 'https://docs.google.com/document/d/1gbLHD-anCcBAP5n_zDfnL86opINGjIEp/edit?rtpof=true&tab=t.0', type: 'Docx' }
                     ],
                     'Third Term': [
-                        { name: 'Mathematics', file: '/downloads/ss1/third-term/mathematics.pdf', type: 'pdf' },
-                        { name: 'English Language', file: '/downloads/ss1/third-term/english.pdf', type: 'pdf' },
-                        { name: 'Physics', file: '/downloads/ss1/third-term/physics.pdf', type: 'pdf' },
-                        { name: 'Chemistry', file: '/downloads/ss1/third-term/chemistry.pdf', type: 'pdf' },
-                        { name: 'Biology', file: '/downloads/ss1/third-term/biology.pdf', type: 'pdf' },
-                        { name: 'Agricultural Science', file: '/downloads/ss1/third-term/agriculture.pdf', type: 'pdf' },
-                        { name: 'Commerce', file: '/downloads/ss1/third-term/commerce.pdf', type: 'pdf' },
-                        { name: 'Accounting', file: '/downloads/ss1/third-term/accounting.docx', type: 'docx' }
+                        { name: 'English Language', file: '', type: 'Docx' },
+                        { name: 'Mathematics', file: '', type: 'Docx' },
+                        { name: 'Citizenship and Heritage Studies', file: '/downloads/jss2/first-term/basic-science.Docx', type: 'Docx' },
+                        { name: 'Digital Technology', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'Computer Hardware and GSM Repairs', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Marketing', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'Biology', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Government', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' },
+                        { name: 'Chemistry', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'CRS', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Physics', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'Literature-In-Eng', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Economics', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Agricultural Science', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' }
                     ]
                 },
                 'SS 2': {
                     'First Term': [
-                        { name: 'Mathematics', file: '/downloads/ss2/first-term/mathematics.pdf', type: 'pdf' },
-                        { name: 'English Language', file: '/downloads/ss2/first-term/english.pdf', type: 'pdf' },
-                        { name: 'Physics', file: '/downloads/ss2/first-term/physics.pdf', type: 'pdf' },
-                        { name: 'Chemistry', file: '/downloads/ss2/first-term/chemistry.pdf', type: 'pdf' },
-                        { name: 'Biology', file: '/downloads/ss2/first-term/biology.pdf', type: 'pdf' },
-                        { name: 'Economics', file: '/downloads/ss2/first-term/economics.pdf', type: 'pdf' },
-                        { name: 'Government', file: '/downloads/ss2/first-term/government.pdf', type: 'pdf' },
-                        { name: 'Literature in English', file: '/downloads/ss2/first-term/literature.docx', type: 'docx' }
+                        { name: 'English Language', file: '', type: 'Docx' },
+                        { name: 'Mathematics', file: '', type: 'Docx' },
+                        { name: 'Citizenship and Heritage Studies', file: '/downloads/jss2/first-term/basic-science.Docx', type: 'Docx' },
+                        { name: 'Digital Technology', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'Computer Hardware and GSM Repairs', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Marketing', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'Biology', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Government', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' },
+                        { name: 'Chemistry', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'CRS', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Physics', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'Literature-In-Eng', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Economics', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Agricultural Science', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' }
                     ],
                     'Second Term': [
-                        { name: 'Mathematics', file: '/downloads/ss2/second-term/mathematics.pdf', type: 'pdf' },
-                        { name: 'English Language', file: '/downloads/ss2/second-term/english.pdf', type: 'pdf' },
-                        { name: 'Physics', file: '/downloads/ss2/second-term/physics.pdf', type: 'pdf' },
-                        { name: 'Chemistry', file: '/downloads/ss2/second-term/chemistry.pdf', type: 'pdf' },
-                        { name: 'Biology', file: '/downloads/ss2/second-term/biology.pdf', type: 'pdf' },
-                        { name: 'Economics', file: '/downloads/ss2/second-term/economics.pdf', type: 'pdf' },
-                        { name: 'Geography', file: '/downloads/ss2/second-term/geography.pdf', type: 'pdf' },
-                        { name: 'Further Mathematics', file: '/downloads/ss2/second-term/further-math.zip', type: 'zip' }
+                        { name: 'English Language', file: 'https://docs.google.com/document/d/1i9kWpZPQC4uowUGfCFiupiTB2iJd5Duq/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'pdf' },
+                        { name: 'Mathematics', file: 'https://docs.google.com/document/d/1kkq9e-yTTWiqYktG4w9Yd85TekhkR_TM/edit', type: 'Docx' },
+                        { name: 'Citizenship and Heritage Studies', file: 'https://drive.google.com/drive/folders/1wlMtrWvHMf7WeQMlLOSrGmrr0m1DNJqP', type: 'pdf' },
+                        { name: 'Digital Technology', file: 'https://drive.google.com/drive/folders/1wlMtrWvHMf7WeQMlLOSrGmrr0m1DNJqP', type: 'pdf' },
+                        { name: 'Computer Hardware and GSM Repairs', file: 'https://drive.google.com/drive/folders/1wlMtrWvHMf7WeQMlLOSrGmrr0m1DNJqP', type: 'pdf' },
+                        { name: 'Marketing', file: 'https://drive.google.com/drive/folders/1wlMtrWvHMf7WeQMlLOSrGmrr0m1DNJqP', type: 'pdf' },
+                        { name: 'Biology', file: 'https://docs.google.com/document/d/1hhKVByjzu--yQcbkTV1YuRIeb4JnHdZF/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'Government', file: 'https://docs.google.com/document/d/1iNs4WmCuwIaG1Sai3afsb6HRaAKMXowh/edit?rtpof=true&tab=t.0', type: 'Docx' },
+                        { name: 'Chemistry', file: 'https://docs.google.com/document/d/1hlJCFo30XqaK7qLrMhOcmgW1OzQboJFy/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'CRS', file: 'https://docs.google.com/document/d/1hvsPOCV9zwGpNeHwCfSzPBBylKQZHsch/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'docx' },
+                        { name: 'Physics', file: 'https://drive.google.com/drive/folders/1wlMtrWvHMf7WeQMlLOSrGmrr0m1DNJqP', type: 'pdf' },
+                        { name: 'Literature-In-Eng', file: 'https://drive.google.com/drive/folders/1wlMtrWvHMf7WeQMlLOSrGmrr0m1DNJqP', type: 'pdf' },
+                        { name: 'Economics', file: 'https://docs.google.com/document/d/1jztl7LMidnQVp4Qq9mlcZkKz_WNNOjFy/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'Agricultural Science', file: 'https://docs.google.com/document/d/1hFcl0ZNOTQl8ZZJajR8pGYGcDSQSv2YY/edit', type: 'Docx' }
                     ],
                     'Third Term': [
-                        { name: 'Mathematics', file: '/downloads/ss2/third-term/mathematics.pdf', type: 'pdf' },
-                        { name: 'English Language', file: '/downloads/ss2/third-term/english.pdf', type: 'pdf' },
-                        { name: 'Physics', file: '/downloads/ss2/third-term/physics.pdf', type: 'pdf' },
-                        { name: 'Chemistry', file: '/downloads/ss2/third-term/chemistry.pdf', type: 'pdf' },
-                        { name: 'Biology', file: '/downloads/ss2/third-term/biology.pdf', type: 'pdf' },
-                        { name: 'Agricultural Science', file: '/downloads/ss2/third-term/agriculture.pdf', type: 'pdf' },
-                        { name: 'Commerce', file: '/downloads/ss2/third-term/commerce.pdf', type: 'pdf' },
-                        { name: 'Accounting', file: '/downloads/ss2/third-term/accounting.docx', type: 'docx' }
+                        { name: 'English Language', file: '', type: 'Docx' },
+                        { name: 'Mathematics', file: '', type: 'Docx' },
+                        { name: 'Citizenship and Heritage Studies', file: '/downloads/jss2/first-term/basic-science.Docx', type: 'Docx' },
+                        { name: 'Digital Technology', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'Computer Hardware and GSM Repairs', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Marketing', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'Biology', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Government', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' },
+                        { name: 'Chemistry', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'CRS', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Physics', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'Literature-In-Eng', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Economics', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Agricultural Science', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' }
                     ]
                 },
                 'SS 3': {
                     'First Term': [
-                        { name: 'Mathematics', file: '/downloads/ss3/first-term/mathematics.pdf', type: 'pdf' },
-                        { name: 'English Language', file: '/downloads/ss3/first-term/english.pdf', type: 'pdf' },
-                        { name: 'Physics', file: '/downloads/ss3/first-term/physics.pdf', type: 'pdf' },
-                        { name: 'Chemistry', file: '/downloads/ss3/first-term/chemistry.pdf', type: 'pdf' },
-                        { name: 'Biology', file: '/downloads/ss3/first-term/biology.pdf', type: 'pdf' },
-                        { name: 'Economics', file: '/downloads/ss3/first-term/economics.pdf', type: 'pdf' },
-                        { name: 'Government', file: '/downloads/ss3/first-term/government.pdf', type: 'pdf' },
-                        { name: 'Literature in English', file: '/downloads/ss3/first-term/literature.docx', type: 'docx' }
+                        { name: 'English Language', file: '', type: 'Docx' },
+                        { name: 'Mathematics', file: '', type: 'Docx' },
+                        { name: 'Citizenship and Heritage Studies', file: '/downloads/jss2/first-term/basic-science.Docx', type: 'Docx' },
+                        { name: 'Digital Technology', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'Computer Hardware and GSM Repairs', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Marketing', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'Biology', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Government', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' },
+                        { name: 'Chemistry', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'CRS', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Physics', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'Literature-In-Eng', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Economics', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Geography', file: '', type: 'pdf' },
+                        { name: 'Agricultural Science', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' }
                     ],
                     'Second Term': [
-                        { name: 'Mathematics', file: '/downloads/ss3/second-term/mathematics.pdf', type: 'pdf' },
-                        { name: 'English Language', file: '/downloads/ss3/second-term/english.pdf', type: 'pdf' },
-                        { name: 'Physics', file: '/downloads/ss3/second-term/physics.pdf', type: 'pdf' },
-                        { name: 'Chemistry', file: '/downloads/ss3/second-term/chemistry.pdf', type: 'pdf' },
-                        { name: 'Biology', file: '/downloads/ss3/second-term/biology.pdf', type: 'pdf' },
-                        { name: 'Economics', file: '/downloads/ss3/second-term/economics.pdf', type: 'pdf' },
-                        { name: 'Geography', file: '/downloads/ss3/second-term/geography.pdf', type: 'pdf' },
-                        { name: 'Further Mathematics', file: '/downloads/ss3/second-term/further-math.zip', type: 'zip' }
+                        { name: 'English Language', file: 'https://docs.google.com/document/d/1iupifFydFE8Z15NsbqjJTo3xqtJ54zZt/edit', type: 'docx' },
+                        { name: 'Mathematics', file: 'https://docs.google.com/document/d/1j1BdtRyFJfSO2mnFuod3N5XQsa-atZBK/edit', type: 'Docx' },
+                        { name: 'Citizenship and Heritage Studies', file: 'https://drive.google.com/drive/folders/1wlMtrWvHMf7WeQMlLOSrGmrr0m1DNJqP', type: 'pdf' },
+                        { name: 'Digital Technology', file: 'https://drive.google.com/drive/folders/1wlMtrWvHMf7WeQMlLOSrGmrr0m1DNJqP', type: 'pdf' },
+                        { name: 'Computer Hardware and GSM Repairs', file: '', type: 'Nil' },
+                        { name: 'Marketing', file: 'https://drive.google.com/drive/folders/1wlMtrWvHMf7WeQMlLOSrGmrr0m1DNJqP', type: 'pdf' },
+                        { name: 'Biology', file: 'https://docs.google.com/document/d/1iVo8g_vMn6zqsWSwt1rkypvFWFuVc2jJ/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'Government', file: 'https://docs.google.com/document/d/1j0qOX4HQfGbeQZr8r2R6Oj1AokoVzsVm/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'Chemistry', file: 'https://docs.google.com/document/d/1iWEeEu1A6XgRPghPHUtKwgociGhk_SA2/edit', type: 'Docx' },
+                        { name: 'CRS', file: 'https://docs.google.com/document/d/1ifcO7WJyzuayfrBnKOto2q2EAaD7-55I/edit?rtpof=true&tab=t.0', type: 'docx' },
+                        { name: 'Physics', file: 'https://docs.google.com/document/d/1j8WVi8VQQ1OShy7hWpLfHOnDvKOP6Vec/edit', type: 'Docx' },
+                        { name: 'Literature-In-Eng', file: 'https://drive.google.com/drive/folders/1wlMtrWvHMf7WeQMlLOSrGmrr0m1DNJqP', type: 'pdf' },
+                        { name: 'Economics', file: 'https://docs.google.com/document/d/1iqk0gj-LQjnd_nF4K-LHiezac-Zj703x/edit?usp=drive_web&ouid=107502952797677309877&rtpof=true', type: 'Docx' },
+                        { name: 'Geography', file: 'https://drive.google.com/drive/folders/1wlMtrWvHMf7WeQMlLOSrGmrr0m1DNJqP', type: 'pdf' },
+                        { name: 'Agricultural Science', file: 'https://docs.google.com/document/d/1iUzTwW1jZNlVqdTEATp7kTakKubVe28M/edit?rtpof=true&tab=t.0', type: 'Docx' }
                     ],
                     'Third Term': [
-                        { name: 'Mathematics', file: '/downloads/ss3/third-term/mathematics.pdf', type: 'pdf' },
-                        { name: 'English Language', file: '/downloads/ss3/third-term/english.pdf', type: 'pdf' },
-                        { name: 'Physics', file: '/downloads/ss3/third-term/physics.pdf', type: 'pdf' },
-                        { name: 'Chemistry', file: '/downloads/ss3/third-term/chemistry.pdf', type: 'pdf' },
-                        { name: 'Biology', file: '/downloads/ss3/third-term/biology.pdf', type: 'pdf' },
-                        { name: 'Agricultural Science', file: '/downloads/ss3/third-term/agriculture.pdf', type: 'pdf' },
-                        { name: 'Commerce', file: '/downloads/ss3/third-term/commerce.pdf', type: 'pdf' },
-                        { name: 'Accounting', file: '/downloads/ss3/third-term/accounting.docx', type: 'docx' }
+                        { name: 'English Language', file: '', type: 'Docx' },
+                        { name: 'Mathematics', file: '', type: 'Docx' },
+                        { name: 'Citizenship and Heritage Studies', file: '/downloads/jss2/first-term/basic-science.Docx', type: 'Docx' },
+                        { name: 'Digital Technology', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'Computer Hardware and GSM Repairs', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Marketing', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'Biology', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Government', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' },
+                        { name: 'Chemistry', file: '/downloads/jss2/first-term/civic-education.Docx', type: 'Docx' },
+                        { name: 'CRS', file: '/downloads/jss2/first-term/computer.docx', type: 'docx' },
+                        { name: 'Physics', file: '/downloads/jss2/first-term/social-studies.Docx', type: 'Docx' },
+                        { name: 'Literature-In-Eng', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Economics', file: '/downloads/jss2/first-term/home-economics.Docx', type: 'Docx' },
+                        { name: 'Geography', file: '', type: 'pdf' },
+                        { name: 'Agricultural Science', file: '/downloads/jss2/first-term/agriculture.Docx', type: 'Docx' }
                     ]
-                }
-            }
-        };
-
+                },
+            },
+        }
         // ========================================================================
         // STATE MANAGEMENT
         // Tracks current user navigation state
@@ -777,7 +911,7 @@
         // LOGIN FUNCTIONALITY
         // ========================================================================
         loginBtn.addEventListener('click', handleLogin);
-        passwordInput.addEventListener('keypress', function(e) {
+        passwordInput.addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
                 handleLogin();
             }
@@ -785,7 +919,7 @@
 
         function handleLogin() {
             const password = passwordInput.value;
-            
+
             if (password === CORRECT_PASSWORD) {
                 loginScreen.classList.add('hidden');
                 mainApp.classList.remove('hidden');
@@ -803,7 +937,7 @@
         // ========================================================================
         // LOGOUT FUNCTIONALITY
         // ========================================================================
-        logoutBtn.addEventListener('click', function() {
+        logoutBtn.addEventListener('click', function () {
             mainApp.classList.add('hidden');
             loginScreen.classList.remove('hidden');
             resetApp();
@@ -813,17 +947,17 @@
         // TAB SWITCHING (LEVEL SELECTION)
         // Only shows classes for the selected level
         // ========================================================================
-        juniorTab.addEventListener('click', function() {
+        juniorTab.addEventListener('click', function () {
             switchTab('junior');
         });
 
-        seniorTab.addEventListener('click', function() {
+        seniorTab.addEventListener('click', function () {
             switchTab('senior');
         });
 
         function switchTab(level) {
             currentLevel = level;
-            
+
             // Update tab active state
             if (level === 'junior') {
                 juniorTab.classList.add('active');
@@ -836,7 +970,7 @@
                 seniorClasses.classList.remove('hidden');
                 juniorClasses.classList.add('hidden');
             }
-            
+
             // Hide term and subject sections when switching tabs
             termList.classList.add('hidden');
             subjectList.classList.add('hidden');
@@ -848,7 +982,7 @@
         // ========================================================================
         const classButtons = document.querySelectorAll('.class-btn');
         classButtons.forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 currentClass = this.getAttribute('data-class');
                 currentLevel = this.getAttribute('data-level');
                 showTermSelection();
@@ -859,11 +993,11 @@
             // Hide all class lists
             juniorClasses.classList.add('hidden');
             seniorClasses.classList.add('hidden');
-            
+
             // Show term selection
             termList.classList.remove('hidden');
             subjectList.classList.add('hidden');
-            
+
             // Update title with current class
             termTitle.textContent = currentClass + ' - Select Term';
         }
@@ -872,9 +1006,9 @@
         // BACK TO CLASSES
         // Returns to the class list for the current level
         // ========================================================================
-        backToClasses.addEventListener('click', function() {
+        backToClasses.addEventListener('click', function () {
             termList.classList.add('hidden');
-            
+
             // Show appropriate class list based on current level
             if (currentLevel === 'junior') {
                 juniorClasses.classList.remove('hidden');
@@ -889,7 +1023,7 @@
         // ========================================================================
         const termButtons = document.querySelectorAll('.term-btn');
         termButtons.forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 currentTerm = this.getAttribute('data-term');
                 showSubjectSelection();
             });
@@ -903,17 +1037,17 @@
         function showSubjectSelection() {
             termList.classList.add('hidden');
             subjectList.classList.remove('hidden');
-            
+
             // Update title with class and term
             subjectTitle.textContent = currentClass + ' - ' + currentTerm;
-            
+
             // Clear previous subjects
             subjectButtons.innerHTML = '';
-            
+
             // Get subjects for the SPECIFIC class and term
             // Navigation: resourcesDatabase[level][class][term]
             const subjects = resourcesDatabase[currentLevel][currentClass][currentTerm];
-            
+
             // Generate subject buttons dynamically
             subjects.forEach(subject => {
                 const btn = document.createElement('button');
@@ -925,12 +1059,12 @@
                     </span>
                     <span class="arrow">›</span>
                 `;
-                
+
                 // Add click event to download the SPECIFIC file for this subject
-                btn.addEventListener('click', function() {
+                btn.addEventListener('click', function () {
                     downloadFile(subject);
                 });
-                
+
                 subjectButtons.appendChild(btn);
             });
         }
@@ -939,7 +1073,7 @@
         // BACK TO TERMS
         // Returns to term selection for the current class
         // ========================================================================
-        backToTerms.addEventListener('click', function() {
+        backToTerms.addEventListener('click', function () {
             subjectList.classList.add('hidden');
             termList.classList.remove('hidden');
         });
@@ -952,7 +1086,7 @@
         function downloadFile(subject) {
             // Open the file URL in a new tab
             window.open(subject.file, '_blank');
-            
+
             // Log access action for debugging/tracking
             console.log('========================================');
             console.log('FILE LINK OPENED');
@@ -975,11 +1109,11 @@
             currentLevel = 'junior';
             currentClass = '';
             currentTerm = '';
-            
+
             // Reset tab states
             juniorTab.classList.add('active');
             seniorTab.classList.remove('active');
-            
+
             // Reset visibility - show junior classes only
             juniorClasses.classList.remove('hidden');
             seniorClasses.classList.add('hidden');
@@ -988,4 +1122,5 @@
         }
     </script>
 </body>
+
 </html>
